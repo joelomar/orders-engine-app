@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Admin | Joe's Burger</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/joe.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
+
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		
+		
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logos">
+									<img src="images/logo.jpg" alt="" />
+								</a>
+								<br>
+								<br>
+
+						</div>
+					</header>
+
+				<!-- Main -->
+				<div id="login_box">
+					
+                       <input type="text" id="username" placeholder="username">
+                       <br>
+                       <input type="text" id="password" placeholder="pass">
+                       <br>
+                       <button id="acces_button">accesar</button>
+
+                    
+				</div>
+					<div id="main">
+						<div class="inner">
+							<h1>Joe's Burgers</h1>
+							<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+							
+
+							<!-- Table -->
+								<section>
+									<h3>Tabla de Ordenes</h3>	
+                                    <div id="data_holder" style="background-color:#e6f0ff; padding: 10px 0px 10px 10px; border-radius: 5px;"></div>
+
+                                    <p>Results from the database</p>
+                                    <div id="data_hold"></div>
+									<div ng-app="orderApp">
+                                
+                                         <test-directive></test-directive>
+                                    </div>
+									
+								</section>
+
+							
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								
+							</section>
+							<section>
+								
+							</section>
+							<ul class="copyright">
+								<li></li><li></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+            
+            
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+
+	</body>
+</html>

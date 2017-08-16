@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Joe's Burger</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="assets/js/joesburger.js"></script>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logos">
+									<img src="images/logo.jpg" alt="" />
+								</a>
+								<br>
+								<br>
+
+						</div>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Joe's Burgers</h1>
+							<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+                            <p><strong>Paga con:</strong> ATH Movil, tarjeta de debito, tarjeta de credito y 'Cash'</p>
+							<p>Hambuerger con papas fritas y refrecos 14oz <strong>$6.99</strong><br><button onclick="orderOne()" type="button" id="button">Ordenar</button> </p>
+
+							<div id="options_box">
+							<input type="radio" value="deli" id="deli">Delivery
+							<input type="radio" value="pick" id="pick">Pick-Up
+							<input type="radio" value="ath" id="ath">Ath Movil
+							<input type="radio" value="credit" id="credit">Credito
+							<input type="radio" value="debit" id="debit">Debito
+							<input type="radio" value="cash" id="cash">Cash
+							<br>
+							<input type="text" id="description" placeholder="Especifica">
+							<br>
+							<input type="text" id="order_name" placeholder="Name">
+							<br>
+							<input type="text" id="phone" placeholder="Phone">
+							<br>
+							<button onclick="placeOrder()" type="button" id="next_button">Proceder</button>
+							</div>
+
+							<div id="ath_box">	
+							<img src="images\movil.png" alt="ATH" width="98" height="70">
+                               <form>
+                                <!--<input type="text" id="phone" placeholder="telefono" required>
+                                 <br>
+                                <input type="text" id="name" placeholder="nombre" required>
+                                 <br>
+                                <input type="submit" value="cargar" onclick="sendDataToServer()">-->
+                                <p><strong>Num. de Envio:</strong><br>787-654-9876<br><strong>Total:</strong><br>$6.99<br><strong>Num. de Orden</strong><br>8765</p>
+                               <div style="color:red">*Nota: Para que su orden sea procesada, el total y numero de orden tienen que estar correctos.<br>El numero de orden se escribira como mensaje*</div>
+                               <button onclick="sendDataToServer()" id="button">Listo</button>
+                               </form>
+                               </div>
+
+                            <div id="credit_box">
+                            <img src="images\icon_payments.png" alt="ATH">	
+                             <form action=""> 	
+                             <input type="text" id="fname" placeholder="nombre" required>
+                                 <br>
+                                <input type="text" id="lname" placeholder="apellido" required>
+                                 <br>
+                                 <input type="text" id="fname" placeholder="num tarjeta" required>
+                                 <br>
+                                <input type="text" id="lname" placeholder="expira" required>
+                                 <br>
+                                 <input type="text" id="fname" placeholder="3 digitos" required>
+                                 <br>
+                                <input type="text" id="lname" placeholder="otro" required>
+                                 <br>
+                                <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                </select>
+                                 <br>
+                                <button onclick="sendDataToServer()" id="button">Listo</button>
+                                <input type="submit" value="cargar">
+                                
+                             </form>
+                            </div>
+
+                            <div id="debit_box">
+                              <form action=""> 	
+                             <input type="text" id="fname" name="firstname" placeholder="nombre">
+                                 <br>
+                                <input type="text" id="lname" name="lastname" placeholder="apellido">
+                                 <br>
+                                 <input type="text" id="fname" name="num_card" placeholder="num tarjeta">
+                                 <br>
+                                <input type="text" id="lname" name="expire" placeholder="expira">
+                                 <br>
+                                 <input type="text" id="fname" name="code" placeholder="3 digitos">
+                                 <br>
+                                <input type="text" id="lname" name="other" placeholder="otro">
+                                 <br>
+                                <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                </select>
+                                 <br>
+                                <input type="submit" value="cargar">
+                             </form>
+                            </div>
+
+
+							
+                            <p>Doble Bacon con papas fritas y refrecos 14oz <strong>$8.99</strong><br><button onclick="orderTwo()"type="button" id="button">Ordenar</button></p></p>
+							<p>Ribs Burger con papas fritas y refrecos 16oz <strong>$11.99</strong><br><button onclick="orderThree()"type="button" id="button">Ordenar</button></p></p>
+							<p>Big Sampler con refrecos 14oz <strong>$15.99</strong><br><button onclick="orderFour()"type="button" id="button">Ordenar</button></p>
+							<p>Burger Minis con un 6-pack de Medallas <strong>$12.99</strong><br><button type="button" id="button">Ordenar</button></p></p>
+							<p>Kids Menu con papas fritas y refrecos 11oz <strong>$4.99</strong><br><button type="button" id="button">Ordenar</button></p></p>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								
+							</section>
+							<section>
+								
+							</section>
+							<ul class="copyright">
+								<li></li><li></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
